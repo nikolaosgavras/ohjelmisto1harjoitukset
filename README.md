@@ -24,4 +24,6 @@ Tein tehtävät 1, 2, 3 ja 4.
 
 ## Moduuli 5
 
-Kesken
+Tein tehtävät 1, 2
+
+21.08.2026
