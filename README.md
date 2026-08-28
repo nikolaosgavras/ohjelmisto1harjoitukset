@@ -27,3 +27,8 @@ Tein tehtävät 1, 2, 3 ja 4.
 Tein tehtävät 1, 2
 
 21.08.2026
+
+Tein tehtävät 3, 4, 5
+
+27.08.2026
+
