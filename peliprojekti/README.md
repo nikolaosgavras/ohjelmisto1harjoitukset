@@ -1,1 +1,3 @@
-# Snake peli
+# Terminaali tarinapeli-projekti
+
+Nikolaos Gavras
