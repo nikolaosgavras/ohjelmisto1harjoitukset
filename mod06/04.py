@@ -1,1 +1,0 @@
-kaupungit = ["Pariisi", "Kuopio", "Helsinki", "Espoo", ""]
