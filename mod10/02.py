@@ -26,7 +26,25 @@ class Elevator:
         return
 
 
-a = Elevator(0, 10)
+class Building:
+    def __init__(self, bottomFloorNumber, topFloorNumber, amountOfElevators):
+        self.building_bottom_floor = bottomFloorNumber
+        self.building_top_floor = topFloorNumber
+        self.building_elevator_amount = amountOfElevators
+        self.elevator_list = []
 
-a.go_to_floor(10)
-a.go_to_floor(0)
+        for _ in range(amountOfElevators):
+            elevatorObject = Elevator(bottomFloorNumber, topFloorNumber)
+            self.elevator_list.append(elevatorObject)
+
+    def run_elevator(self, elevatorNumber, targetFloor):
+        self.elevator_list[elevatorNumber].go_to_floor(targetFloor)
+        
+            
+            
+testBuilding = Building(0, 20, 5)
+
+testBuilding.run_elevator(0, 3)
+print(testBuilding.elevator_list[0].current_floor) # works as intented
+
+
