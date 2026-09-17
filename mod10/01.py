@@ -28,4 +28,5 @@ class Elevator:
 
 a = Elevator(0, 10)
 
-a.go_to_floor(11)
+a.go_to_floor(10)
+a.go_to_floor(0)
