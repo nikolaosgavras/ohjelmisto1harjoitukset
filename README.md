@@ -52,3 +52,22 @@ Tein tehtävät 1, 2, 3, 4
 
 Tein tehtävät 1, 2 04.09.2026
 
+Tein tehtävät 3, 4, 5, 6 11.09.2026
+
+## Moduuli 8
+
+Tein tehtävät 1, 2 11.09.2026
+
+Tein tehtävän 3 14.09.2026
+
+## Moduuli 9
+
+Tein tehtävät 1, 2, 3 ja 4 15.09.2026
+
+## Moduuli 10
+
+Tein tehtävän 1. 17.09.2026
+
+Tein tehtävän 2. 18.09.2026
+
+Tein tehtävät 3 ja 4. 22.09.2026

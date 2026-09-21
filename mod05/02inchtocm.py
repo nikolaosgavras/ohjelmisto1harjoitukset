@@ -11,4 +11,3 @@ while True:
 
     except ValueError:
         print("Syötä numerinen arvo")
-

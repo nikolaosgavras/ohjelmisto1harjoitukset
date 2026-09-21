@@ -85,7 +85,7 @@ def arvo_sana():
 
 
 def nayta_ohje():
-    """Tulostaa listan kaikista käytettävissä olevista komennoista."""
+    #Tulostaa listan kaikista käytettävissä olevista komennoista.
     print("\n--- KOMENNOT ---")
     print("REPPU (tai INVENTAARIO) - Näytä repun sisältö")
     print("LISÄÄ                   - Lisää itse uusi esine reppuun")
