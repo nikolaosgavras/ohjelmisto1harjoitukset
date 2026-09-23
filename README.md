@@ -4,9 +4,13 @@ Nikolaos Gavras
 
 ## Peliprojekti
 
+EI OLE VIELÄ TARINAA, SEKÄ PUUTTUU OSIO 5. KESKEN
+
 Tein 1 ja 2 osiot. 01.09.2026
 
 Tein 3 osion 10.09.2026
+
+Tein 4 osion 24.09.2026
 
 ## Moduuli 1 ja 2
 
@@ -71,3 +75,7 @@ Tein tehtävän 1. 17.09.2026
 Tein tehtävän 2. 18.09.2026
 
 Tein tehtävät 3 ja 4. 22.09.2026
+
+## Moduuli 11
+
+Tein tehtävät 1 ja 2 22.09.2026
