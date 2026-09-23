@@ -1,5 +1,7 @@
 import random
-
+from classes import player, room, item
+from functions.lopeta_peli import lopeta_peli
+from functions.nayta_ohje import nayta_ohje
 
 def nayta_inventaario(tavarat):
     if not tavarat:
@@ -8,10 +10,9 @@ def nayta_inventaario(tavarat):
         print("\n--- REPUN SISÄLTÖ ---")
         numero = 1
         for tavara in tavarat:
-            print(f"{numero}. {tavara}")
+            print(f"{numero}. {tavara.item_name}")
             numero += 1
         print("--------------------")
-
 
 def lisaa_esine(tavarat):
     esine = input("Minkä esineen haluat lisätä reppuun?: ").strip()
@@ -20,7 +21,6 @@ def lisaa_esine(tavarat):
         print(f"Esine {esine} lisättiin reppuusi.")
     else:
         print("Et syöttänyt esineen nimeä, mitään ei lisätty.")
-
 
 def poista_esine(tavarat):
     if not tavarat:
@@ -32,7 +32,6 @@ def poista_esine(tavarat):
     for tavara in tavarat:
         print(f"{numero}. {tavara}")
         numero += 1
-
     poistettava = input("Minkä esineen haluat poistaa (nimi tai numero)? ").strip()
 
     if poistettava.isdigit():
@@ -78,31 +77,6 @@ def nayta_tiedot(pelaajan_nimi, pelaajan_ika, tavarat):
     print(f"Esineitä repussa: {len(tavarat)} kpl")
 
 
-def arvo_sana():
-    sanat = ["Viikko", "Pöytä", "Pannu", "Juomalasi", "Lompakko", "Miekka", "Seikkailu"]
-    valittu = random.choice(sanat)
-    print(f"Satunnainen sana: {valittu}")
-
-
-def nayta_ohje():
-    #Tulostaa listan kaikista käytettävissä olevista komennoista.
-    print("\n--- KOMENNOT ---")
-    print("REPPU (tai INVENTAARIO) - Näytä repun sisältö")
-    print("LISÄÄ                   - Lisää itse uusi esine reppuun")
-    print("POISTA                  - Poista esine repusta")
-    print("TUTKI                   - Tutki ympäristöä ja etsi esineitä")
-    print("TIEDOT (tai IKÄ)        - Näytä pelaajan tiedot ja ikä")
-    print("RANDOMSANA              - Arvo satunnainen sana")
-    print("HELP (tai OHJE)         - Näytä tämä komentolista")
-    print("LOPETA                  - Sulje peli")
-
-
-def lopeta_peli():
-    """Sulkee pelin."""
-    print("Suljetaan ohjelma. Kiitos pelaamisesta!")
-    raise SystemExit
-
-
 while True:
     try:
         age = int(input("Syötä ikäsi: "))
@@ -118,26 +92,68 @@ if age < 12:
 print(f"\nTervetuloa {name}!")
 print("Voit kirjoittaa 'help' nähdäksesi kaikki komennot.")
 
-inventaario = []
+testiEsine1 = item.Item("Test 1", 20.00)
+testiEsine2 = item.Item("Jakoavain", 50.35)
+testiEsine3 = item.Item("Vasara", 531.63)
+
+aula = room.Room("Aula")
+tyopaja = room.Room("Työpaja")
+katto = room.Room("Katto")
+
+huoneet = {
+    "AULA": aula,
+    "TYÖPAJA": tyopaja,
+    "KATTO": katto,
+}
+
+pelaaja = player.Player(name, [], aula)
 
 while True:
     userCommandInput = input("\nSyötä komento: ").upper().strip()
     match userCommandInput:
-        case "LOPETA":
+        case "LOPETA" | "QUIT":
             lopeta_peli()
-        case "IKÄ" | "TIEDOT":
-            nayta_tiedot(name, age, inventaario)
+        case "TIEDOT":
+            nayta_tiedot(name, age, pelaaja.player_items)
+            print(f"Sijainti: {pelaaja.player_location.room_name}")
         case "REPPU" | "INVENTAARIO":
-            nayta_inventaario(inventaario)
-        case "LISÄÄ" | "LISAA":
-            lisaa_esine(inventaario)
-        case "POISTA":
-            poista_esine(inventaario)
-        case "TUTKI":
-            tutki_ymparistoa(inventaario)
-        case "RANDOMSANA":
-            arvo_sana()
-        case "HELP" | "OHJE":
+            nayta_inventaario(pelaaja.player_items)
+        case "LIIKU":
+            print("\nKÄYTETTÄVISSÄ OLEVAT HUONEET:")
+            for huone in huoneet.values():
+                if huone == pelaaja.player_location:
+                    print(f"- {huone.room_name} (Olet täällä)")
+                else:
+                    print(f"- {huone.room_name}")
+
+            valinta = str(input("\nKirjoita huoneen nimi: ")).strip().upper()
+
+            if valinta in huoneet:
+                kohde = huoneet[valinta]
+                if kohde == pelaaja.player_location:
+                    print(f"Olet jo huoneessa {kohde.room_name}.")
+                else:
+                    pelaaja.move_to_room(kohde)
+                    print(f"Siirryit huoneeseen: {pelaaja.player_location.room_name}")
+            else:
+                print(f"Huonetta '{valinta}' ei ole olemassa. Tarkista kirjoitusasu.")
+        case "ETSI":
+            current_room = pelaaja.player_location
+            if not current_room.items:
+                print("Huoneesta ei löytynyt mitään.")
+            else:
+                print(f"Löysit huoneesta {current_room.items[0].item_name}.")
+                valinta = input("Haluatko ottaa esineen mukaasi? (kyllä (k) vai ei (e)): ").strip().lower()
+                if valinta in ("k", "kyllä", "kylla"):
+                    esine = current_room.items.pop(0)
+                    pelaaja.player_items.append(esine)
+                    print(f"Otit esineen {esine.item_name} mukaasi.")
+                elif valinta in ("e", "ei"):
+                    print("Jätit esineen huoneeseen.")
+                else:
+                    print("Tuntematon komento, yritä uudellen.")
+
+        case "HELP":
             nayta_ohje()
         case _:
             print("Tuntematon komento, yritä uudelleen, voit myös kirjoittaa 'help' komentoriviin nähdäksesi kaikki komennot.")
