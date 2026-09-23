@@ -3,8 +3,9 @@ from .item import Item
 
 
 class Room:
-    def __init__(self, name):
+    def __init__(self, name, description=""):
         self.room_name = name
+        self.description = description
         self.items = []
 
         if random.randint(1, 2) == 1: # 50 prosentin mahdollisuus generoida esine

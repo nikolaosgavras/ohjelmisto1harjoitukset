@@ -1,0 +1,12 @@
+TEHTÄVÄSI:
+Toimit aseman ympäristöinsinöörinä. Tehtäväsi on pelastaa asema
+palauttamalla uusiutuva puhdas energiantuotanto (YK:n tavoite 7).
+
+Kriisin voi ratkaista 3 eri tavalla:
+1. Aurinko: Korjaa kattotasanteen aurinkopaneelisto.
+2. Tuuli: Huolla ja vapauta tuulikallion jäätynyt tuulivoimala.
+3. Maalämpö: Säädä kellarin geoterminen höyrykierto kohdilleen.
+
+Etsi huoneista tarvittavat työkalut komennolla 'ETSI',
+liiku tilasta toiseen komennolla 'LIIKU' ja korjaa laitteet
+komennolla 'KORJAA'.
