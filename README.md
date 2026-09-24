@@ -4,13 +4,17 @@ Nikolaos Gavras
 
 ## Peliprojekti
 
-EI OLE VIELÄ TARINAA, SEKÄ PUUTTUU OSIO 5. KESKEN
+Peliprojektin koodit ja tarkempi dokumentaatio löytyvät `peliprojekti/`-kansiosta.
 
 Tein 1 ja 2 osiot. 01.09.2026
 
-Tein 3 osion 10.09.2026
+Tein 3 osion. 10.09.2026
 
-Tein 4 osion 24.09.2026
+Tein 4 osion. 24.09.2026
+
+Tein 5 osion sekä tarinan ja 3 ratkaisureittiä. 24.09.2026
+
+Projekti on nyt valmis.
 
 ## Moduuli 1 ja 2
 
