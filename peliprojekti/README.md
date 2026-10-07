@@ -9,7 +9,7 @@ Peli ottaa suoraan kantaa YK:n kestävän kehityksen tavoitteeseen 7: Edullista 
 - Aseman pelastus perustuu kokonaan uusiutuvien ja puhtaiden energiamuotojen käyttöönottoon.
 - Pelaaja voi ratkaista energiakriisin valitsemalla minkä tahansa kolmesta vihreän energian ratkaisusta: aurinkoenergian, tuulivoiman tai geotermisen maalämmön.
 
-## Kolme erilaista ratkaisureittiä (3 Winning Routes)
+## Kolme erilaista ratkaisureittiä
 
 Pelin voi läpäistä vähintään kolmella toisistaan riippumattomalla tavalla:
 
