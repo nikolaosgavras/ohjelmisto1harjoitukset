@@ -11,6 +11,9 @@ class Room:
         if random.randint(1, 2) == 1: # 50 prosentin mahdollisuus generoida esine
             self.generate_item()
 
+    def remove_item(self, item):
+        self.items.remove(item)
+
     def generate_item(self):
         tavara_lista = [
             Item("Avain", 0.1),

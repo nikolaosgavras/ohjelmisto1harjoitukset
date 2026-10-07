@@ -8,4 +8,5 @@ def nayta_ohje():
     print("KORJAA (tai AKTIVOI)    - Korjaa aseman energiantuotantojärjestelmä")
     print("TIEDOT                  - Näytä pelaajan tiedot ja nykyinen huone")
     print("HELP                    - Näytä tämä komentolista")
+    print("TALLENNA                - Tallenna pelitilanne")
     print("LOPETA                  - Sulje peli")

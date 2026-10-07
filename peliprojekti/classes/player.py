@@ -6,8 +6,7 @@ class Player:
     def move(self, direction):
         self.move_diretion = direction
     def take_item(self, item):
-        self.player_items.append(item)
         self.player_location.remove_item(item)
+        self.player_items.append(item)
     def move_to_room(self, room):
         self.player_location = room
-

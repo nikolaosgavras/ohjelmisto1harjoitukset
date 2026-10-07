@@ -38,22 +38,25 @@ python main.py
 ```
 
 ### Käynnistys ja tallennus:
-* **Jatka peliä:** Ohjelman käynnistyessä peli kysyy suoraan, haluatko ladata aiemman tallennuksen (`save.txt`). Jos lataat, aiemmin syötetty nimi, ikä, huone ja reppu palautuvat automaattisesti.
+* **Jatka peliä:** Ohjelman käynnistyessä peli kysyy suoraan, haluatko ladata aiemman tallennuksen (`save.txt`). Jos lataat, nimi, ikä, sijainti, reppu ja kaikkien huoneiden esineet painoineen palautuvat automaattisesti.
+* **Tallenna:** `TALLENNA` kirjoittaa koko pelitilanteen JSON-muotoisena tekstinä tiedostoon `save.txt`. Myös vanha nelirivinen tallennusmuoto voidaan ladata, mutta siitä puuttuvaa huoneiden aiempaa tilaa ei voida palauttaa.
 * **Uusi peli:** Kysyy pelaajan iän (ikäraja K-12: alle 12-vuotiaat eivät pääse peliin) ja nimen.
 * **Tarinan alustus:** Peli lukee alustuksen ja tehtävänannon suoraan ulkoisista tiedostoista `intro.txt` ja `instructions.txt`.
 
 ### Käytettävissä olevat komennot:
-- Komennot löytyvät pelistä kirjoittamalla `help`.
+- Komentolista näytetään ennen jokaista komentoa ja myös kirjoittamalla `help`.
 
 ### Tiedosto- ja moduulirakenne:
 ```text
 peliprojekti/
 ├── README.md              # Projektin dokumentaatio
+├── tehtavat.md             # Projektitehtävien toteutus ja koodiviittaukset
 ├── project.html           # Visuaalinen opas ja edistymisseuranta
 ├── intro.txt              # Tarinan taustatarina ja alkuteksti (luetaan koodissa)
 ├── instructions.txt       # Pelin tavoite ja tehtävänanto (luetaan koodissa)
 ├── save.txt               # Tallennustiedosto (luodaan automaattisesti tallennettaessa)
 ├── main.py                # Pääohjelma, pelisilmukka ja komentojen käsittely
+├── tests/test_peli.py      # Tallennuksen ja ratkaisureittien testit
 │
 ├── classes/               # Olio-ohjelmoinnin luokat
 │   ├── item.py            # Item-luokka (item_name, item_weight)
@@ -65,7 +68,12 @@ peliprojekti/
     ├── nayta_inventaario.py # Repun sisällön tulostus
     ├── nayta_ohje.py      # Komentolistauksen tulostus
     ├── nayta_tiedot.py    # Pelaajan tietojen tulostus
-    └── poista_esine.py    # Esineen poisto repusta
+    ├── poista_esine.py    # Esineen poisto repusta
+    ├── liiku.py           # Huoneesta toiseen liikkuminen
+    ├── etsi.py            # Esineiden etsiminen ja kerääminen
+    ├── korjaa.py          # Kolmen energiaratkaisun käsittely
+    ├── tallenna_peli.py   # Koko pelitilanteen tallennus
+    └── load_save.py       # Tallennuksen lataus ja vanhan muodon tuki
 ```
 
 ### Olio-ohjelmointi:
