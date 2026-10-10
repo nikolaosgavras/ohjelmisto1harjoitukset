@@ -10,7 +10,7 @@ def load_save(huoneet, save_path=None):
     if valinta not in ("k", "kylla", "kyllä"):
         return None, None
     if save_path is None:
-        save_path = Path(__file__).resolve().parent.parent / "save.txt"
+        save_path = Path(__file__).resolve().parent.parent / "save.json"
 
     try:
         text = Path(save_path).read_text(encoding="utf-8")
@@ -39,7 +39,7 @@ def load_save(huoneet, save_path=None):
         print(f"\nTallennus ladattu! Tervetuloa takaisin {name}!")
         return pelaaja, age
     except FileNotFoundError:
-        print("Tallennustiedostoa 'save.txt' ei löytynyt. Aloitetaan uusi peli.\n")
+        print("Tallennustiedostoa 'save.json' ei löytynyt. Aloitetaan uusi peli.\n")
     except (ValueError, KeyError, TypeError, AttributeError):
         print("Tallennustiedosto oli virheellinen tai puutteellinen. Aloitetaan uusi peli.\n")
     return None, None

@@ -54,7 +54,7 @@ Olioiden assosiaatiot näkyvät pelaajan huoneviitteessä sekä pelaajan ja huon
 | Vaatimus | Toteutuspaikka | Toteutus ja tila |
 | --- | --- | --- |
 | Esittely ja ohjeet luetaan erillisistä tekstitiedostoista ja tulostetaan käynnistyksessä. | [main.py](main.py#L52), rivit 52–58; [intro.txt](intro.txt), [instructions.txt](instructions.txt). | **Toteutettu.** Molemmat tiedostot luetaan `with open(..., "r")` -rakenteella ja tulostetaan. Ohjetiedoston nimi on `instructions.txt`; tehtävänannon tiedostonimet ovat esimerkkejä. |
-| Pelitilanne tallennetaan tekstitiedostoon. | [main.py](main.py#L194), rivit 194–201; [save.txt](save.txt). | **Osittain.** `TALLENNA` kirjoittaa nimen, iän, nykyisen huoneen ja repun esineiden nimet. Huoneiden esinetilannetta ja esineiden painoja ei tallenneta. |
+| Pelitilanne tallennetaan tekstitiedostoon. | [main.py](main.py#L194), rivit 194–201; [save.json](save.json). | **Osittain.** `TALLENNA` kirjoittaa nimen, iän, nykyisen huoneen ja repun esineiden nimet. Huoneiden esinetilannetta ja esineiden painoja ei tallenneta. |
 | Tallennettua peliä voi jatkaa käynnistyksen yhteydessä siitä, mihin jäi. | [main.py](main.py#L19), rivit 19–34 ja 89–95. | **Osittain.** Käynnistys kysyy lataamisesta ja palauttaa tallennetut pelaajatiedot, huoneen ja repun nimet. Huoneet ja niiden esineet luodaan uudelleen, joten koko pelimaailman aiempi tila ei palaudu. |
 
 Tallennuksen nykyiset rajaukset:

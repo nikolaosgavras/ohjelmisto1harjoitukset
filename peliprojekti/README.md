@@ -38,8 +38,8 @@ python main.py
 ```
 
 ### Käynnistys ja tallennus:
-* **Jatka peliä:** Ohjelman käynnistyessä peli kysyy suoraan, haluatko ladata aiemman tallennuksen (`save.txt`). Jos lataat, nimi, ikä, sijainti, reppu ja kaikkien huoneiden esineet painoineen palautuvat automaattisesti.
-* **Tallenna:** `TALLENNA` kirjoittaa koko pelitilanteen JSON-muotoisena tekstinä tiedostoon `save.txt`. Myös vanha nelirivinen tallennusmuoto voidaan ladata, mutta siitä puuttuvaa huoneiden aiempaa tilaa ei voida palauttaa.
+* **Jatka peliä:** Ohjelman käynnistyessä peli kysyy suoraan, haluatko ladata aiemman tallennuksen (`save.json`). Jos lataat, nimi, ikä, sijainti, reppu ja kaikkien huoneiden esineet painoineen palautuvat automaattisesti.
+* **Tallenna:** `TALLENNA` kirjoittaa koko pelitilanteen JSON-muotoisena tekstinä tiedostoon `save.json`.
 * **Uusi peli:** Kysyy pelaajan iän (ikäraja K-12: alle 12-vuotiaat eivät pääse peliin) ja nimen.
 * **Tarinan alustus:** Peli lukee alustuksen ja tehtävänannon suoraan ulkoisista tiedostoista `intro.txt` ja `instructions.txt`.
 
@@ -54,7 +54,7 @@ peliprojekti/
 ├── project.html           # Visuaalinen opas ja edistymisseuranta
 ├── intro.txt              # Tarinan taustatarina ja alkuteksti (luetaan koodissa)
 ├── instructions.txt       # Pelin tavoite ja tehtävänanto (luetaan koodissa)
-├── save.txt               # Tallennustiedosto (luodaan automaattisesti tallennettaessa)
+├── save.json               # Tallennustiedosto (luodaan automaattisesti tallennettaessa)
 ├── main.py                # Pääohjelma, pelisilmukka ja komentojen käsittely
 ├── tests/test_peli.py      # Tallennuksen ja ratkaisureittien testit
 │

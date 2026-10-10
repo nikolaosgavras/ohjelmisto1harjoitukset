@@ -34,7 +34,7 @@
 ## Projekti 5: tehty
 
 - `main.py`, rivit 62–66: luetaan ja tulostetaan `intro.txt` ja `instructions.txt` UTF-8-merkistöllä. Polut toimivat myös toisesta hakemistosta käynnistettäessä.
-- `main.py`, rivit 91–92 ja `functions/tallenna_peli.py`, rivit 4–19: `TALLENNA` kirjoittaa pelitilanteen JSON-muotoisena tekstinä tiedostoon `save.txt`.
+- `main.py`, rivit 91–92 ja `functions/tallenna_peli.py`, rivit 4–19: `TALLENNA` kirjoittaa pelitilanteen JSON-muotoisena tekstinä tiedostoon `save.json`.
 - Tallennukseen kuuluvat pelaajan nimi, ikä ja sijainti sekä repun ja kaikkien huoneiden esineet nimineen ja painoineen. Myös tyhjät huoneet säilyvät tyhjinä.
 - `functions/load_save.py`, rivit 15–57: palautetaan pelaaja ja huoneiden esinetilanne. Kerätyt esineet eivät ilmesty uudelleen huoneisiin eikä tallennuksen satunnaisesineitä arvota uudelleen.
 - `main.py`, rivit 43–44 ja 68–70: jatketaan ladatun pelaajan sijainnista ja näytetään palautunut reppu.

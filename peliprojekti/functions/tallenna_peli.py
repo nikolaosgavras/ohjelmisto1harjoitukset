@@ -3,7 +3,7 @@ import json
 
 def tallenna_peli(pelaaja, age, huoneet, save_path=None):
     if save_path is None:
-        save_path = Path(__file__).resolve().parent.parent / "save.txt"
+        save_path = Path(__file__).resolve().parent.parent / "save.json"
     data = {
         "name": pelaaja.player_name,
         "age": age,
@@ -16,4 +16,4 @@ def tallenna_peli(pelaaja, age, huoneet, save_path=None):
     }
     with Path(save_path).open("w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
-    print("Peli tallennettu tiedostoon 'save.txt'!")
+    print("Peli tallennettu tiedostoon 'save.json'!")
