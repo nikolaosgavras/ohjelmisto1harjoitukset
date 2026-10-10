@@ -29,24 +29,7 @@ def load_save(huoneet, save_path=None):
                 for nimi, esineet in data["rooms"].items()
             }
         else:
-            # Vanhoissa tallennuksissa on neljä riviä ja vain esineiden nimet.
-            lines = text.splitlines()
-            if len(lines) < 4:
-                raise ValueError("Puutteellinen tallennus")
-            name, age, location = lines[0], int(lines[1]), lines[2].strip().upper()
-            if location not in huoneet:
-                raise ValueError("Tuntematon huone")
-            room_items = {nimi: list(huone.items) for nimi, huone in huoneet.items()}
-            items = []
-            for nimi in filter(None, lines[3].split(",")):
-                esine = None
-                for esineet in room_items.values():
-                    esine = next((e for e in esineet if e.item_name == nimi), None)
-                    if esine is not None:
-                        esineet.remove(esine)
-                        break
-                items.append(esine if esine is not None else Item(nimi, 1.0))
-
+            raise ValueError("Puutteellinen tallennus")
         if age < 12:
             raise ValueError("Tallennuksen pelaaja on alle 12-vuotias")
         pelaaja = Player(name, items, huoneet[location])

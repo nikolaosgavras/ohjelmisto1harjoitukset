@@ -1,3 +1,4 @@
+# importataan kaikki tarvittavat luokat ja funktiot
 from classes.player import Player
 from classes.room import Room
 from classes.item import Item
@@ -13,12 +14,15 @@ from functions.korjaa import korjaa
 from functions.tallenna_peli import tallenna_peli
 from functions.load_save import load_save
 
+
+# Luodaan huone objektit ja annetaan niille erilaisia arvoja
 aula = Room("Aula", "Aseman keskus. Punaiset varovalot vilkkuvat seinillä ja lämpömittari laskee.")
 tyopaja = Room("Työpaja", "Täynnä työkaluja ja varaosia vihreän energian laitteisiin.")
 katto = Room("Katto", "Tuulinen kattotasanne. Aurinkopaneelit ovat lumen peitossa ja kaipaavat huoltoa.")
 kallio = Room("Tuulikallio", "Korkea ja kylmä ulkokallio, jossa seisoo suuri jäinen tuulivoimala.")
 kellari = Room("Kellari", "Höyryinen tila, jonne syvältä kalliosta saapuvat maalämpöputket.")
 
+# luodaan sanakirja että voidaan helposti viitata objekteihin funktioissa
 huoneet = {
     "AULA": aula,
     "TYÖPAJA": tyopaja,
@@ -27,20 +31,21 @@ huoneet = {
     "KELLARI": kellari,
 }
 
-# tarinaan liittyvät esineet
+# luodaan tarinaan liittyvät esineet
 jakoavain = Item("Jakoavain", 0.8)
 aurinkokenno = Item("Aurinkokenno", 1.5)
 kiipeilyvaljaat = Item("Kiipeilyvaljaat", 2.0)
 voiteluoljy = Item("Voiteluöljy", 0.5)
 venttiiliavain = Item("Venttiiliavain", 1.2)
 
+# laitetaan tarinaesineitä eri huoneisiin
 kallio.items.append(jakoavain)
 kellari.items.append(aurinkokenno)
 aula.items.append(kiipeilyvaljaat)
 katto.items.append(voiteluoljy)
 tyopaja.items.append(venttiiliavain)
 
-pelaaja, age = load_save(huoneet)
+pelaaja, age = load_save(huoneet) # kysytään onko pelaajalla tallennusta load save funktiolla, jos ei, aloitetaan uusi peli
 ladattu = pelaaja is not None
 if not ladattu:
     while True:
@@ -69,7 +74,7 @@ if ladattu:
     print(f"\nJatketaan tallennuksesta. Olet huoneessa: {pelaaja.player_location.room_name}")
     nayta_inventaario(pelaaja.player_items)
 
-while True:
+while True: # komentorivi valikko pelaamiseen ja erilaisiin pelin toimintoihin
     nayta_ohje()
     userCommandInput = input("\nSyötä komento: ").upper().strip()
     match userCommandInput:

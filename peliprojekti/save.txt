@@ -1,0 +1,46 @@
+{
+  "name": "1",
+  "age": 12,
+  "location": "AULA",
+  "items": [],
+  "rooms": {
+    "AULA": [
+      {
+        "item_name": "Kiipeilyvaljaat",
+        "item_weight": 2.0
+      }
+    ],
+    "TYÖPAJA": [
+      {
+        "item_name": "Venttiiliavain",
+        "item_weight": 1.2
+      }
+    ],
+    "KATTO": [
+      {
+        "item_name": "Voiteluöljy",
+        "item_weight": 0.5
+      }
+    ],
+    "TUULIKALLIO": [
+      {
+        "item_name": "Avain",
+        "item_weight": 0.1
+      },
+      {
+        "item_name": "Jakoavain",
+        "item_weight": 0.8
+      }
+    ],
+    "KELLARI": [
+      {
+        "item_name": "Köysi",
+        "item_weight": 1.0
+      },
+      {
+        "item_name": "Aurinkokenno",
+        "item_weight": 1.5
+      }
+    ]
+  }
+}
